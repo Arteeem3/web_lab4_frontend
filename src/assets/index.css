@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --main-bg-color: #fff;
+    --main-text-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --border-color: "black";
+    --table-color: #fff;
+    --table-text-color: "black";
+}
+
+[data-theme="dark"] {
+    --main-bg-color: #1e1f26;
+    --main-text-color: #ccc;
+    --shadow-color: rgb(255, 255, 255, 0.2);
+    --border-color: #333333;
+    --table-color: rgba(90, 90, 90, 0.27);
+    --table-text-color: #fff;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.border-color-auth {
+    border-color: var(--border-color)
+}
+
+.text-color-input {
+    color: #333333;
+}
+
+.header-shadow {
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.p-slider .p-slider-range {
+    background-color: #9999CC;
+}
+
+.p-slider .p-slider-handle {
+    background-color: #9999CC;
+    border-color: #9999CC;
+}
+
+.p-inputtext {
+    border: 1px solid #666666;
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+    color: #333333
+}
+
+.p-inputtext:focus {
+    border-color: #9999CC;
+    outline: none;
+    box-shadow: 0 0 4px #9999CC;
+}
+
+.p-inputtext:hover {
+    border-color: #9999CC;
+}
