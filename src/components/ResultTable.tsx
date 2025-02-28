@@ -53,7 +53,7 @@ export default function ResultTable({ results, onClearResults, onClearGraph }: R
         setIsLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const response = await fetch("http://localhost:24147/backend/api/results", {
+            const response = await fetch("http://localhost:9119/backend/api/results", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

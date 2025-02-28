@@ -35,7 +35,7 @@ export default function LoginForm() {
         console.log(`так так щас я добавляю пользователя ${login}`);
         setIsLoading(true);
         try {
-            const response = await fetch(`http://localhost:24147/backend/api${endpoint}`, {
+            const response = await fetch(`http://localhost:9119/backend/api${endpoint}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ login, password }),

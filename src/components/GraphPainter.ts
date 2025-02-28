@@ -40,24 +40,27 @@ export default class GraphPainter {
         this.drawArrow( this.SIZE / 2, this.SIZE, this.SIZE / 2, 0);
     }
 
-    drawGraph(r: number){
+    drawGraph(r: number) {
         const pointInPixels = this.SIZE / this.WIDTH_IN_POINTS;
         this.ctx.fillStyle = this.COLOR_MAIN;
 
+        // Прямоугольник в правой нижней четверти (ширина r/2, высота r)
         this.ctx.fillRect(
-            this.SIZE / 2,
-            this.SIZE / 2 - r * pointInPixels,
-            r * pointInPixels,
-            r * pointInPixels
+            this.SIZE / 2,                                 // X: начинается от центра
+            this.SIZE / 2,                                 // Y: начинается от центра
+            (r / 2) * pointInPixels,                      // Ширина: r/2
+            r * pointInPixels                              // Высота: r
         );
 
+        // Треугольник в правой верхней четверти (высота r, ширина r/2)
         this.ctx.beginPath();
-        this.ctx.moveTo(this.SIZE / 2, this.SIZE / 2);
-        this.ctx.lineTo(this.SIZE / 2, this.SIZE / 2 + r * pointInPixels);
-        this.ctx.lineTo(this.SIZE / 2 + r * pointInPixels, this.SIZE / 2);
-        this.ctx.lineTo(this.SIZE / 2, this.SIZE / 2);
+        this.ctx.moveTo(this.SIZE / 2, this.SIZE / 2);     // Начало в центре
+        this.ctx.lineTo(this.SIZE / 2, this.SIZE / 2 - r * pointInPixels); // Вверх на r
+        this.ctx.lineTo(this.SIZE / 2 + (r / 2) * pointInPixels, this.SIZE / 2); // Вправо на r/2
+        this.ctx.closePath();
         this.ctx.fill();
 
+        // Четверть круга (без изменений)
         this.ctx.beginPath();
         this.ctx.arc(
             this.SIZE / 2,
@@ -69,7 +72,7 @@ export default class GraphPainter {
         this.ctx.moveTo(this.SIZE / 2, this.SIZE / 2);
         this.ctx.lineTo(this.SIZE / 2, this.SIZE / 2 - r / 2 * pointInPixels);
         this.ctx.lineTo(this.SIZE / 2 - r / 2 * pointInPixels, this.SIZE / 2);
-        this.ctx.lineTo(this.SIZE / 2, this.SIZE / 2);
+        this.ctx.closePath();
         this.ctx.fill();
     }
 

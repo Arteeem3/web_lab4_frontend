@@ -19,7 +19,7 @@ export default function MainPage(){
 
         const fetchResults = async () => {
             try {
-                const response = await fetch("http://localhost:24147/backend/api/results", {
+                const response = await fetch("http://localhost:9119/backend/api/results", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

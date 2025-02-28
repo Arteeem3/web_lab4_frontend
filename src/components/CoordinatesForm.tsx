@@ -44,7 +44,7 @@ export default function CoordinatesForm ({ onAddResult, onRadiusChange }: Coordi
     };
 
     const handleSubmit = async () => {
-        const url = `http://localhost:24147/backend/api/results`;
+        const url = `http://localhost:9119/backend/api/results`;
         setIsLoading(true);
         try {
             const response = await fetch(url, {
@@ -76,8 +76,8 @@ export default function CoordinatesForm ({ onAddResult, onRadiusChange }: Coordi
                     id="x-slider"
                     value={x}
                     onChange={(e) => setX(e.value as number)}
-                    min={-3}
-                    max={5}
+                    min={-5}
+                    max={3}
                     step={0.1}
                     className="w-3/4 ml-6 mt-3"
                 />
@@ -103,7 +103,7 @@ export default function CoordinatesForm ({ onAddResult, onRadiusChange }: Coordi
                     value={r}
                     onChange={handleRadiusChange}
                     min={0.1}
-                    max={5}
+                    max={3}
                     step={0.1}
                     className="w-3/4 ml-6 mt-3"
                 />

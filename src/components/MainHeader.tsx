@@ -33,7 +33,7 @@ export default function MainHeader() {
 
     const fetchUserStats = async () => {
         try {
-            const response = await fetch("http://localhost:24147/backend/api/results/userStats", {
+            const response = await fetch("http://localhost:9119/backend/api/results/userStats", {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,

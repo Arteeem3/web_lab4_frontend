@@ -20,7 +20,7 @@ export default forwardRef(function Graph({ width, height, radius, onAddResult, t
         if (!token) return;
 
         try {
-            const url = `http://localhost:24147/backend/api/results`;
+            const url = `http://localhost:9119/backend/api/results`;
             const response = await fetch(url, {
                 method: "GET",
                 headers: {
@@ -106,13 +106,13 @@ export default forwardRef(function Graph({ width, height, radius, onAddResult, t
         const x = ((xPixels - centerX) / pointInPixels).toFixed(2);
         const y = ((centerY - yPixels) / pointInPixels).toFixed(2);
 
-        if (parseFloat(x) > 5 || parseFloat(x) < -3 || parseFloat(y) > 3 || parseFloat(y) < -3) {
-            alert("Клик вне зоны графика. -3<= x <= 5, -3 <= y <= 3");
+        if (parseFloat(x) > 3 || parseFloat(x) < -5 || parseFloat(y) > 3 || parseFloat(y) < -3) {
+            alert("Клик вне зоны графика. -5<= x <= 3, -3 <= y <= 3");
             return;
         }
 
         try {
-            const url = `http://localhost:24147/backend/api/results`;
+            const url = `http://localhost:9119/backend/api/results`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
